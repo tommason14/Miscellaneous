@@ -18,8 +18,8 @@ def grouping(dictionary):
     return vals
 
 
-def operations(list):
-    concat = pd.concat(list)
+def operations(lst):
+    concat = pd.concat(lst)
     group = concat.groupby(concat.index)
     mean = group.mean()
     return mean
