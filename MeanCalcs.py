@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+'''
+Averages cells in multiple dataframes i.e. averages values in cell 1A in every frame, and outputs results to excel file.
+'''
+
 import pandas as pd
 import sys
 
