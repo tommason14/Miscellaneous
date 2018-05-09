@@ -119,7 +119,7 @@ obs = {'K1':  ('K', 4.47, 55.95, 33.61),
 def main():
     for acid, vals in obs.items():
         print(acid, end=" ")
-        print(shift(vals[0], vals[1], vals[2], vals[3]))
+        print(shift(*vals))
 
 if __name__ == '__main__':
     main()
