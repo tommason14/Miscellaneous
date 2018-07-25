@@ -1,0 +1,21 @@
+alias bashrc='vim ~/.bashrc && source ~/.bashrc'
+alias bash_aliases='vim ~/.bash_aliases && source ~/.bashrc'
+alias bash_functions='vim ~/.bash_functions && source ~/.bashrc'
+# aliases and functions loaded in bashrc
+
+# safety net
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias gaia='ssh -Y tmas0011@msgln6.its.monash.edu.au'
+alias raijin='ssh -Y tm3124@raijin.nci.org.au'
+alias magnus='ssh -Y tmason@magnus.pawsey.org.au'
+alias desktop='cd ~/Desktop'
+alias downloads='cd ~/Downloads'
+alias documents='cd ~/Documents'
+alias vimrc='vim ~/.vimrc'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+alias l='ls'
+alias ..='cd ..'

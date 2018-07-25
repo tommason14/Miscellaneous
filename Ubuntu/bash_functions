@@ -1,0 +1,12 @@
+mkcd() {
+mkdir $1 && cd $1
+}
+
+gitall() {
+git add . && git commit && git push
+}
+
+uberwriter() {
+flatpak run de.wolfvollprecht.UberWriter $1 > /dev/null & disown
+clear
+}
