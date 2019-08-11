@@ -8,19 +8,21 @@ update_git() {
 }
 
 update_and_cd() {
-  echo $(pwd)
+  echo ">>> $(pwd) <<<"
   update_git
   cd $cwd
 }
 
-cwd=$(pwd) 
-for f in $(find . -name ".git")
-do 
-  cd $(dirname $f)
-  update_and_cd
-done
+run_loop() {
+  for f in $@
+  do
+    cd $f
+    update_and_cd
+  done
+}
 
-cd ~/dotfiles
-update_and_cd
-cd ~/Documents/monash_automation
-update_and_cd
+cwd=$(pwd) 
+repos_in_documents_folder="$(find . -name ".git" | xargs -I {} dirname {})"
+additional="$HOME/dotfiles $HOME/Documents/monash_automation"
+repos="$repos_in_documents_folder $additional"
+run_loop $repos
