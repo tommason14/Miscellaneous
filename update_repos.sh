@@ -8,7 +8,9 @@ update_git() {
 }
 
 update_and_cd() {
-  echo ">>> $(pwd) <<<"
+  blue=$(tput setaf 4)
+  normal=$(tput sgr0)
+  printf "\n$blue>>> $(pwd) <<<$normal\n\n"
   update_git
   cd $cwd
 }
@@ -22,7 +24,7 @@ run_loop() {
 }
 
 cwd=$(pwd) 
-repos_in_documents_folder="$(find . -name ".git" | xargs -I {} dirname {})"
-additional="$HOME/dotfiles $HOME/Documents/monash_automation"
+repos_in_documents_folder="$(find . -name ".git" | sort | xargs -I {} dirname {})"
+additional="$HOME/dotfiles"
 repos="$repos_in_documents_folder $additional"
 run_loop $repos
