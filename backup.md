@@ -20,8 +20,9 @@ root access. If so, redirect the shell script to a file with `curl ... > install
 and edit this directly.
 
 Once installed, you have to configure `rclone` to connect to your choice of
-cloud storage. All common storage providers are available, including Dropbox,
-Google Drive and OneDrive. To do this, run `rclone config`.
+cloud storage. All common storage providers are available, including
+[Dropbox](https://www.dropbox.com/),
+[Google Drive](https://www.google.com/drive/) and [OneDrive](https://onedrive.live.com/about/en-au/). To do this, run `rclone config`.
 
 Then perform the following steps to link rclone to Google Drive:
 
@@ -36,7 +37,7 @@ s) Set configuration password
 q) Quit config
 n/r/c/s/q>
 ```
-Select `n`
+  Select `n`.
 
 2. Give the name of your storage provider, which you will refer to when calling
    rclone.
@@ -59,31 +60,32 @@ Select `n`
 ....
 ```
 
-Select `drive`
+  Select `drive`.
+
 
 3. Select a client ID. 
 
-Here, we can leave this field blank, so just press Enter. If you want to
+  Here, we can leave this field blank, so just press Enter. If you want to
 improve the rate of file transfers, you can set a client ID following the
 instructions [here](https://rclone.org/drive/#making-your-own-client-id).
 
 4. Enter a client secret. 
 
-Leave this blank if you pressed Enter in the previous step. If you set up your
+  Leave this blank if you pressed Enter in the previous step. If you set up your
 own client ID, a secret token will be provided for you to enter here.
 
 5. Give the scope with which rclone can access your file system.
 
-We want rclone to write files to the Google Drive system, so type `drive` to
+  We want rclone to write files to the Google Drive system, so type `drive` to
 give rclone full access.
 
 5. Add a root folder ID.
 
-Leave this blank.
+  Leave this blank.
 
 6. Add a service account file.
 
-Again, leave this empty.
+  Again, leave this empty.
 
 7. When asked to edit the advanced config, select `No`.
 
@@ -92,7 +94,8 @@ Again, leave this empty.
 9. A web link will then appear. Copy and paste this into your browser and sign
    in to the Google account you want to copy files to. 
 
-A verification code will appear- copy this into your terminal.
+  A verification code will appear- copy this into your terminal.
+
 
 
 Then you are finished! When asked if all is OK, select `yes` and quit the
@@ -122,7 +125,8 @@ over will be destroyed as soon as the remote file system is purged! So I
 strongly recommend you use `rclone copy` instead.
 
 - If you have files that you do not wish to copy over, use the `filter`
-  command. In the example above, temporary files used by the GAMESS software
+  command. In the example above, temporary files used by the
+[GAMESS](https://www.msg.chem.iastate.edu/gamess/) software
 are ignored, as well as compiled python byte code and large tarballs that may
 not be required if the original files are copied over.
 
