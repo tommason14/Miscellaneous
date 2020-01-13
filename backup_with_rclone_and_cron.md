@@ -81,11 +81,11 @@ give rclone full access.
 
 5. Add a root folder ID.
 
-  Leave this blank.
+  Leave this blank. Press Enter.
 
 6. Add a service account file.
 
-  Again, leave this empty.
+  Again, leave this empty. Press Enter.
 
 7. When asked to edit the advanced config, select `No`.
 
@@ -99,7 +99,8 @@ give rclone full access.
 
 
 Then you are finished! When asked if all is OK, select `yes` and quit the
-interactive prompt. You can now use `rclone` to copy files to Google Drive.
+interactive prompt. You can now use the `rclone` command to copy files to
+Google Drive.
 
 To do so, create a folder in Google Drive called `backups`, or something
 similar. Then use a script like the one below to copy files over from the
