@@ -1,14 +1,15 @@
 #!/usr/bin/env sh
 
 update_git() {
-  git pull | tee tmpfile
-  if ! grep -q "Already up to date" tmpfile
-  then
-    git add .
-    git commit
-    git push
-  fi
-  rm tmpfile
+  # git pull | tee tmpfile
+  # if ! grep -q "Already up to date" tmpfile
+  # then
+  git pull
+  git add .
+  git commit
+  git push
+  # fi
+  # rm tmpfile
 }
 
 update_and_cd() {
