@@ -1,15 +1,10 @@
 #!/usr/bin/env sh
 
 update_git() {
-  # git pull | tee tmpfile
-  # if ! grep -q "Already up to date" tmpfile
-  # then
   git pull
-  git add .
+  git add . 
   git commit
   git push
-  # fi
-  # rm tmpfile
 }
 
 update_and_cd() {
@@ -30,6 +25,6 @@ run_loop() {
 
 cwd=$(pwd) 
 repos_in_documents_folder="$(find . -name ".git" | sort | xargs -I {} dirname {})"
-additional="$HOME/dotfiles"
+additional="$HOME/.local/scripts $HOME/dotfiles"
 repos="$repos_in_documents_folder $additional"
 run_loop $repos
