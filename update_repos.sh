@@ -2,9 +2,14 @@
 
 update_git() {
   git pull
-  git add . 
-  git commit
-  git push
+  if [ $(git diff HEAD | wc -l) -gt 0 ] 
+  then
+    git add . 
+    git commit
+    git push
+  else
+    echo "No changes"
+  fi
 }
 
 update_and_cd() {
