@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 update_git() {
   git pull
+  git add . 
   if [ $(git diff HEAD | wc -l) -gt 0 ] 
   then
-    git add . 
     git commit
     git push
   else
